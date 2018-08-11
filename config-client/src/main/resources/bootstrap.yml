@@ -1,0 +1,19 @@
+# Properties active for ALL profiles:
+---
+spring:
+  application:
+    name: client1app
+server:
+  port: 8002
+
+
+# Properties activated if "dev" is the active profile:
+---
+spring:
+  profiles:
+  #active: default is loading application.yml file form the git repository
+    active: dev
+    # if we change the active to dev then it will look for client1app-dev.yml file on github
+  cloud:
+    config:
+      uri: http://localhost:8001
